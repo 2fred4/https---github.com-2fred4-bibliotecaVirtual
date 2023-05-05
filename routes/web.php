@@ -35,4 +35,4 @@ Route::post('/prestamos', [PrestamoController::class, 'store'])->name('prestamos
 Route::get('/indexPrestamo/{prestamo}/edit', [PrestamoController::class, 'edit'])->name('prestamo.edit');
 Route::put('/indexPrestamo/{prestamo}', [PrestamoController::class, 'update'])->name('prestamos.update');
 Route::delete('/indexPrestamo/{prestamo}', [PrestamoController::class, 'destroy'])->name('prestamo.destroy');
-
+Route::get('/buscarPrestamo', [PrestamoController::class, 'buscar'])->name('prestamo.buscar');

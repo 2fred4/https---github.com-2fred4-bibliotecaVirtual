@@ -51,7 +51,7 @@
                 <div class="row align-items-center">
                     <div class="col text-right">
                         <a href="{{route('libros.create')}}" class="btn btn-sm btn-success">Agregar Libro</a>
-                        <a href="{{route('principal')}}" class="btn btn-sm btn-warning">Regresar</a>
+                        <a href="{{route('principal')}}" class="btn btn-sm btn-secondary">Regresar</a>
                       </div>
                 </div>
             </div>

@@ -134,4 +134,15 @@ class PrestamoController extends Controller
         return redirect()->route('prestamo.index')
                          ->with('success', 'El prestamo ha sido eliminado exitosamente.');
     }
+    public function buscar(Request $request)
+    {
+        $busqueda = $request->input('buscar');
+        $prestamos = Prestamo::where('id', 'LIKE', '%' . $busqueda . '%')
+                            ->orWhere('fechaSolicitud', 'LIKE', '%' . $busqueda . '%')
+                            ->orWhere('fechaPrestamo', 'LIKE', '%' . $busqueda . '%')
+                            ->orWhere('fechaDevolucion', 'LIKE', '%' . $busqueda . '%')
+                            ->paginate(10);
+        $prestamos->appends(['busqueda' => $busqueda]);
+        return view('prestamos.indexPrestamo', compact('prestamos'));
+  }
 }

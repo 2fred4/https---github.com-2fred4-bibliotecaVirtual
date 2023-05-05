@@ -51,11 +51,22 @@
                 <div class="row align-items-center">
                     <div class="col text-right">
                         <a href="{{route('prestamo.create')}}" class="btn btn-sm btn-success">Agregar Prestamo</a>
-                        <a href="{{route('principal')}}" class="btn btn-sm btn-warning">Regresar</a>
+                        <a href="{{route('principal')}}" class="btn btn-sm btn-secondary">Regresar</a>
                       </div>
                 </div>
             </div>
         </div>
+
+        <form action="{{ route('prestamo.buscar') }}" method="GET" role="buscar">
+            <div class="input-group">
+                <input type="text" class="form-control" name="buscar" placeholder="Buscar " value="{{ request()->input('buscar') }}">
+                <span class="input-group-btn">
+                    <button type="submit" class="btn btn-primary">Buscar</button>
+                </span>
+            </div>
+        </form>
+
+        
 
 <table class="table">
     <thead>
